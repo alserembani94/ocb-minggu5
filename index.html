@@ -22,7 +22,7 @@
     }
 
     .children {
-      transition: all 0.3s linear;
+      transition: all 0.3s ease-in-out;
     }
   </style>
 </head>
@@ -54,6 +54,9 @@
     console.log("ID ELEMENT >>>>", element);
     console.log("NAMA >>>>", nama);
 
+    // const classElements = document.getElementsByClassName("wrapper");
+    // console.log("CLASS ELEMENTS >>>>", classElements);
+
     element.innerText = nama;
     // element.style.color = "red";
     // element.style.fontSize = "100px";
@@ -64,9 +67,6 @@
       element.classList.toggle("blue");
       element.classList.toggle("red");
     }, 1000);
-
-    // const classElements = document.getElementsByClassName("wrapper");
-    // console.log("CLASS ELEMENTS >>>>", classElements);
   </script>
   <script src="index.js"></script>
 </body>
