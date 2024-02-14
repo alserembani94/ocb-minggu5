@@ -48,6 +48,10 @@
       background-color: #ffeb3b;
     }
 
+    button:disabled {
+      background-color: #FFFFFF66;
+    }
+
   </style>
 </head>
 <body>
@@ -82,7 +86,7 @@
       <input type="tel" id="telefon" name="telefon">
     </div>
 
-    <button type="submit">Hantar</button>
+    <button type="submit" id="submit">Hantar</button>
   </form>
   <script>
     // CONTOH: Input Validation
@@ -116,6 +120,18 @@
         parent.appendChild(consentCheckbox);
       }
     }
+
+    document.addEventListener('change', function(event) {
+      const isConsentInput = event.target.id === "consent";
+
+      if (isConsentInput) {
+        const consentInput = event.target;
+        const isChecked = consentInput.checked;
+
+        const submitElement = document.getElementById('submit');
+        submitElement.disabled = !isChecked;
+      }
+    })
 
     // CONTOH: Uruskan penghantaran borang ke API
     const form = document.querySelector('form');
